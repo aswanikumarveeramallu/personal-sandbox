@@ -1,0 +1,4 @@
+1)    
+   If property file name in jar file and  property file in your current project   have same name, then there might be 
+   chance your  property name not available in project  property file, in that case  you can change the property file name to avoid
+   ambiguity.
