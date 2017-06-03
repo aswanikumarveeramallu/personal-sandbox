@@ -2,3 +2,21 @@
    If property file name in jar file and  property file in your current project   have same name, then there might be 
    chance your  property name not available in project  property file, in that case  you can change the property file name to avoid
    ambiguity.
+
+2)
+   Date: June-3-2017
+    While executing cucumber test case with @Run(cucumber.class) got NoClassDefFoundException, this is due to  class variable or
+    member variable of class type loading might cause exception.
+    
+    e.g  
+       
+       class AStepDefintion{
+         Dao dao = new DAO();
+         @Given("")
+         public void test(){
+         //some verification 
+         }
+       }
+       
+         In above if dao not loaded properly cucumber will unable to load class AStepDefinition. So it is always better to 
+         instantiate those at constructor level, so that we will get notified.
